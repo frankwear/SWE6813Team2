@@ -73,7 +73,9 @@ MS Teams for chat, video, file, and link sharing.  We have 4 channels whose name
 https://teams.microsoft.com/l/team/19%3amI81jv1uTuhX4KYXONYhFvItWq_hyR6FDGcmXOsEP641%40thread.tacv2/conversations?groupId=4a7d32a3-2fd4-42c5-afa9-aff4c2d8f783&tenantId=45f26ee5-f134-439e-bc93-e6c7e33d61c2
 
 
-Azure Devops for Project and Sprint Management.  Team 2 stores its Kanban (US level) and Sprint (Task level) boards as well as the project backlog in DevOps Boards.  It is configured
+Azure Devops for Project and Sprint Management.  https://dev.azure.com/SWE6813/GamersMeet  
+
+Team 2 stores its Kanban (US level) and Sprint (Task level) boards as well as the project backlog in DevOps Boards.  It is configured
 as an “Agile” project which allows elements from both Scrum and Kanban frameworks.  The project also includes a dashboard and repository, which will be included below as separate
 links:
 Board – https://dev.azure.com/SWE6813/GamersMeet/_boards/board/t/GamersMeet%20Team/Stories
@@ -82,5 +84,5 @@ Sprint – https://dev.azure.com/SWE6813/GamersMeet/_sprints/taskboard/GamersMee
 Repository – https://github.com/frankwear/SWE6813Team2 
 Dashboard with Burndown Charts - https://dev.azure.com/SWE6813/GamersMeet/_dashboards/dashboard/04640d66-1824-425b-a294-090d7c00e3fb
 
-
+Deployed Demonstration Site: https://gamers-meet-293c1.web.app/   
 
