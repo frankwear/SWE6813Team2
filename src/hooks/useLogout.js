@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
-import {authDb, firestoreDb } from '../database/firebase'
+import { authDb, firestoreDb } from '../database/firebase'
 import { useAuthContext } from './useAuthContext'
-import { signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut } from "firebase/auth";
 
 
 export const useLogout = () => {
@@ -21,7 +20,7 @@ export const useLogout = () => {
 
       // sign the user out
       await authDb.signOut()
-      
+
       // dispatch logout action
       dispatch({ type: 'LOGOUT' })
 

@@ -1,7 +1,14 @@
-import { createContext, useReducer, useEffect } from 'react'
-import {authDb } from '../database/firebase'
+import React, { createContext, useContext, useReducer, useEffect } from 'react'
+import { authDb } from '../database/firebase'
+import {
+getAuth,
+onAuthStateChanged
+} from 'firebase/auth'
+
+
 
 export const AuthContext = createContext()
+
 
 export const authReducer = (state, action) => {
   switch (action.type) {
@@ -17,7 +24,7 @@ export const authReducer = (state, action) => {
 }
 
 export const AuthContextProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(authReducer, { 
+  const [state, dispatch] = useReducer(authReducer, {
     user: null,
     authIsReady: false
   })
@@ -30,7 +37,7 @@ export const AuthContextProvider = ({ children }) => {
   }, [])
 
   console.log('AuthContext state:', state)
-  
+
   return (
     <AuthContext.Provider value={{ ...state, dispatch }}>
       { children }
@@ -38,3 +45,6 @@ export const AuthContextProvider = ({ children }) => {
   )
 
 }
+
+
+

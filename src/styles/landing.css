@@ -1,11 +1,14 @@
 .LandingPage {
     background-color: black;
+    margin:0;
+    padding: 0;
+    background-size: 100%
 }
 
 .home-1 {
     display: flex; align-items: center; justify-content: center;
     height: 700px;
-    overflow: hidden;
+
     position: relative;
     cursor: pointer;
 }
@@ -13,12 +16,24 @@
     height: 133%;
     flex-shrink: 0;
     opacity: 0.2;
+
+   height: 100vh;
+     width: 100vw;
+     object-fit: cover;
+
+     left: 0;
+     right: 0;
+     top: 0;
+     bottom: 0;
+
+
 }
 
 /* -------------------- Big text and button -------------------- */
 .home-1 > div {
     position: absolute; display: flex; flex-direction: column; align-items: center;
     height: fit-content;
+    width: fit-content;
     margin-top: -40px;
 }
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
@@ -73,11 +88,12 @@ button::-moz-focus-inner {
 }
 .e-button {
     width: fit-content;
-    padding: 10px 26px 10px 26px;
+    padding: 24px 40px 24px 40px;
     margin: 30px 0 10px 0;
-    border: 1px solid;
+    border: 3px solid;
+    border-radius: 20px;
     background-color: rgb(80, 0, 80);
-    font-size: 22px; font-family: 'Lato', Arial; -webkit-text-stroke: 0.1px;
+    font-size: 30px; font-family: 'Lato', Arial; -webkit-text-stroke: 0.1px;
     color: white;
     -webkit-transition-duration: 0.45s; transition-duration: 0.45s;
 }
@@ -85,32 +101,6 @@ button::-moz-focus-inner {
     color: rgb(100, 0, 100);
     background-color: white;
 }
-.e-button.grey {
-    padding: 10px 20px 10px 20px;
-    background-color: grey;
-    font-size: 18px; font-family: 'Lato', Arial; -webkit-text-stroke: 0.1px;
-}
-.e-button.grey:hover {
-    color: grey;
-    background-color: white;
-}
 
 
 
-/*@media screen and (max-width: 1200px) {
-
-    /* -------------------- Big text and button -------------------- */
-    /*.home-1 > div {
-        margin-top: -60px;
-    /*}
-
-    .home-1 > div > p {
-        padding-left: 9%;
-        padding-right: 9%;
-        font-size: 54px; -webkit-text-stroke: 1.5px;
-        text-align: center;
-        line-height: 145%;
-    }
-    .home-1 > div > button {
-        margin-top: 60px !important;
-    }*/

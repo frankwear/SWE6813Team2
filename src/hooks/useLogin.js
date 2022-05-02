@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react'
-import {authDb, firestoreDb, storageDb } from '../database/firebase'
+// Firebase
+import { authDb, firestoreDb} from '../database/firebase';
+//context provider
 import { useAuthContext } from './useAuthContext'
-import { onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, createUserWithEmailAndPassword } from 'firebase/auth';
+
 
 export const useLogin = () => {
   const [isCancelled, setIsCancelled] = useState(false)
@@ -12,10 +14,10 @@ export const useLogin = () => {
   const login = async (email, password) => {
     setError(null)
     setIsPending(true)
-  
+
     try {
-      // login
-      const res = await authDb.signInWithEmailAndPassword(email, password)
+       // login
+       const res = await authDb.signInWithEmailAndPassword(email, password)
 
       await firestoreDb.collection('user').doc(res.user.uid).update({ online: true })
 
@@ -26,7 +28,8 @@ export const useLogin = () => {
         setIsPending(false)
         setError(null)
       }
-    } 
+
+    }
     catch(err) {
       if (!isCancelled) {
         setError(err.message)

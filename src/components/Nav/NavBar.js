@@ -1,10 +1,13 @@
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { Link, useNavigate } from 'react-router-dom'
 import { useLogout } from '../../hooks/useLogout'
 import { useAuthContext } from '../../hooks/useAuthContext'
+import { getAuth, signOut} from "firebase/auth";
 import '../../styles/navbar.css'
+import { authDb} from '../../database/firebase'
 
 
-export default function NavBar() {
+export default function Navbar() {
 
     const { logout, isPending } = useLogout()
     const { user } = useAuthContext()
@@ -12,32 +15,19 @@ export default function NavBar() {
     return (
         <div className='navbar'>
             <ul>
-            <li>
-             <Link to='/landing'>Home</Link>
-             </li>
                 <li className='logo'>
-
-                    <span>Gamers Meet Logo</span>
+                    <span>Gamers Meet</span>
                 </li>
-
-                {user ?
-                    <li>
-                            {!isPending && <button className='btn' onClick={logout}>logout</button>}
-                            {isPending && <button className='btn' disabled>logging out</button>}
-                    </li>
-                :
-                    <>
+                            <li>
+                            <Link to='/'>Home</Link>
+                            </li>
                         <li>
-                            <Link to='/login'>login</Link>
+                            <Link to='/register'>Register</Link>
                         </li>
-                        <li>
-                            <Link to='/register'>signup</Link>
-                        </li>
-                    </>
-                }
             </ul>
         </div>
 
     )
 
 }
+
